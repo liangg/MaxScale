@@ -2228,8 +2228,7 @@ static bool route_single_stmt(
 	/** 
 	 * Explicit COMMIT and ROLLBACK, implicit COMMIT.
 	 */
-	if (rses->rses_autocommit_enabled &&
-		rses->rses_transaction_active &&
+	if (rses->rses_transaction_active &&
 		(QUERY_IS_TYPE(qtype,QUERY_TYPE_COMMIT) ||
 		QUERY_IS_TYPE(qtype,QUERY_TYPE_ROLLBACK)))
 	{
